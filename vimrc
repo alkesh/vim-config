@@ -23,6 +23,8 @@ set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
 set nowrap  " Line wrapping off
 set timeoutlen=500
+" swap files are really not needed if you're using git
+set noswapfile
 let mapleader = ","
 
 " Display soft column limit
@@ -115,7 +117,9 @@ nmap <silent> <unique> <Leader>. :BufExplorer<CR>
 nmap <silent> <Leader>s :setlocal spell! spelllang=en_gb<CR>
 
 " Command-T configuration
-let g:CommandTMaxHeight=20
+"let g:CommandTMaxHeight=20
+"CtrlP configuration
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " A whole bunch of NERDTree configuration stolen from carlhuda's janus
 
