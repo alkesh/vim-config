@@ -116,10 +116,9 @@ nmap <silent> <unique> <Leader>. :BufExplorer<CR>
 
 nmap <silent> <Leader>s :setlocal spell! spelllang=en_gb<CR>
 
-" Command-T configuration
-"let g:CommandTMaxHeight=20
 "CtrlP configuration
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+map <leader>t :CtrlP<cr>
 
 " A whole bunch of NERDTree configuration stolen from carlhuda's janus
 
