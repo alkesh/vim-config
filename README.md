@@ -5,18 +5,14 @@ If necessary, backup and remove your <tt>~/.vim</tt> directory and
 
 Clone this repository to <tt>~/git</tt>:
 
-    git clone git://github.com/kerryb/vim-config.git ~/.vim
+    git clone git://github.com/alkesh/vim-config.git ~/.vim
 
 (If you're behind a firewall that blocks port 9418, replace <tt>git:</tt> with
 <tt>https:</tt> in the above URL.)
 
-If you're on the BT intranet you can get it from here instead:
-
-    git clone git://git.nat.bt.com/vim-config/vim-config.git ~/.vim
-
 Alternatively, if for some bizarre reason you don't have git installed, you can
 download a zip or tar file using the link on
-[GitHub](http://github.com/kerryb/vim-config).
+[GitHub](http://github.com/alkesh/vim-config).
 
 Finally, symlink <tt>.vimrc</tt>:
 
@@ -81,19 +77,22 @@ Buffer explorer/browser ([more](http://www.vim.org/scripts/script.php?script_id=
 
 Adds support for CoffeeScript. It handles syntax, indenting, and compiling ([more](http://www.vim.org/scripts/script.php?script_id=3590))
 
-## Command-T (1.0b)
-
-Fast file navigation for VIM ([more](http://www.vim.org/scripts/script.php?script_id=3025))
-
-You need to build the code before you can use it:
-
-    cd bundle/command-t/ruby/command-t
-    ruby extconf.rb
-    make
-
 ## Conque Shell (2.0)
 
 Run interactive commands inside a Vim buffer ([more](http://www.vim.org/scripts/script.php?script_id=2771))
+
+## CtrlP (1.7.6)
+
+Fast file navigation for VIM ([more](http://www.vim.org/scripts/script.php?script_id=3736))
+
+Written in pure vimscript, so no need to compile anything (unlike Command-T)
+
+*Keybindings*
+
+<dl>
+  <dt>ctrl-p</dt><dd>The default keybinding</dd>
+  <dt>,t</dt><dd>For those used to using Command-T</dd>
+</dl>
 
 ## EasyGrep (0.98)
 
@@ -365,4 +364,4 @@ The run_tags scripts are available for ubuntu ([script](https://gist.github.com/
 
 # Vim Resources
 
-See my vim bookmarks on [pinboard](http://pinboard.in/u:kerryb/t:vim).
+See kerry's vim bookmarks on [pinboard](http://pinboard.in/u:kerryb/t:vim).
