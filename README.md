@@ -138,7 +138,7 @@ Syntax highlighting for Markdown ([more](http://plasticboy.com/markdown-vim-mode
 
 Extended % matching for HTML, LaTeX, and many other languages ([more](http://www.vim.org/scripts/script.php?script_id=39))
 
-## NERD_tree (4.1.0)
+## NERD tree (4.2.0)
 
 A tree explorer plugin for navigating the filesystem ([more](http://www.vim.org/scripts/script.php?script_id=1658))
 
