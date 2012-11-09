@@ -100,7 +100,7 @@ Fast and Easy Find and Replace Across Multiple Files ([more](http://www.vim.org/
 
 ## EasyMotion (1.3)
 
-Take the <number> out of <number>w or <number>f{char} by highlighting all possible choices and allowing you to press one key to jump directly to the target ([more](http://www.vim.org/scripts/script.php?script_id=3526))
+Take the &lt;number&gt; out of &lt;number&gt;w or &lt;number&gt;f{char} by highlighting all possible choices and allowing you to press one key to jump directly to the target ([more](http://www.vim.org/scripts/script.php?script_id=3526))
 
 ## endwise (1.0)
 
