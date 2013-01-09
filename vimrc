@@ -68,8 +68,10 @@ endif
 " ,p to switch to better font for projector
 :noremap <silent> <leader>p :colorscheme mac-classic\|set guifont=Menlo:h14<CR>
 
-" ,c to show hidden characters
-set listchars=tab:>-,trail:·,eol:$
+" ,c to hide hidden characters
+"set listchars=tab:>-,trail:·,eol:$
+set listchars=tab:▸\ ,trail:·
+set list
 nmap <silent> <leader>c :set nolist!<CR>
 
 " Highlight trailing whitespace
