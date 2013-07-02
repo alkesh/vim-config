@@ -39,6 +39,10 @@ set shiftwidth=2
 set autoindent
 set expandtab
 set backspace=start,indent,eol
+
+" mouse mode for terminal
+set mouse=a
+
 autocmd FileType make set noexpandtab
 
 " treat scss files as css
