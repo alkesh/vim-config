@@ -7,6 +7,7 @@ call vundle#rc()
 
 Bundle 'Align'
 Bundle 'Tabular'
+Bundle 'Tagbar'
 Bundle 'bufexplorer.zip'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'ervandew/supertab'
@@ -17,10 +18,11 @@ Bundle 'matchit.zip'
 Bundle 'mileszs/ack.vim'
 Bundle 'rake.vim'
 Bundle 'repeat.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'rizzatti/funcoo.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'Tagbar'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-endwise'
@@ -150,6 +152,10 @@ map <silent> <Leader>rr :wa<CR>:rubyf %<CR>
 
 " Tagbar
 nmap <Leader>b :TagbarToggle<CR>
+
+" Dash
+nmap <silent> <leader>d <Plug>DashSearch
+
 
 let g:speckyQuoteSwitcherKey = "<Leader>s'"
 let g:speckySpecSwitcherKey = "<Leader>sx"
