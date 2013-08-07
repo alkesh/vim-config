@@ -177,94 +177,11 @@ autocmd vimenter * if !argc() | NERDTree | endif
 " close vim if only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" A whole bunch of NERDTree configuration stolen from carlhuda's janus
-
-"let NERDTreeIgnore=['\.rbc$', '\~$']
-
-""autocmd VimEnter * NERDTree
-"autocmd VimEnter * call s:NERDTreeIfDirectory(expand("<amatch>"))
-"autocmd VimEnter * wincmd p
-"autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-
-"" Disable netrw's autocmd, since we're ALWAYS using NERDTree
-"runtime plugin/netRwPlugin.vim
-"augroup FileExplorer
-  "au!
-"augroup END
-
-"let g:NERDTreeHijackNetrw = 0
-
-"" If the parameter is a directory (including implicit '.'), open NERDTree
-"function s:NERDTreeIfDirectory(directory)
-  "if isdirectory(a:directory) || a:directory == ""
-    "NERDTree
-  "endif
-"endfunction
-
-"" If the parameter is a directory, cd into it
-"function s:CdIfDirectory(directory)
-  "if isdirectory(a:directory)
-    "call ChangeDirectory(a:directory)
-  "endif
-"endfunction
-
-"" NERDTree utility function
-"function s:UpdateNERDTree(stay)
-  "if exists("t:NERDTreeBufName")
-    "if bufwinnr(t:NERDTreeBufName) != -1
-      "NERDTree
-      "if !a:stay
-        "wincmd p
-      "end
-    "endif
-  "endif
-"endfunction
-
-"" Utility functions to create file commands
-"function s:CommandCabbr(abbreviation, expansion)
-  "execute 'cabbrev ' . a:abbreviation . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "' . a:expansion . '" : "' . a:abbreviation . '"<CR>'
-"endfunction
-
-"function s:FileCommand(name, ...)
-  "if exists("a:1")
-    "let funcname = a:1
-  "else
-    "let funcname = a:name
-  "endif
-
-  "execute 'command -nargs=1 -complete=file ' . a:name . ' :call ' . funcname . '(<f-args>)'
-"endfunction
-
-"function s:DefineCommand(name, destination)
-  "call s:FileCommand(a:destination)
-  "call s:CommandCabbr(a:name, a:destination)
-"endfunction
-
-" Tabular
-"vnoremap <silent> <Leader>tt :call Tabularize('/\|/')<CR>
-
-"" Folding settings
-"set foldmethod=indent "fold based on indent
-"set foldnestmax=3     "deepest fold is 3 levels
-"set nofoldenable      "dont fold by default
-
-"" Jump to last cursor position when opening a file
-"" Don't do it when writing a commit log entry
-"autocmd BufReadPost * call SetCursorPosition()
-"function! SetCursorPosition()
-  "if &filetype !~ 'commit\c'
-    "if line("'\"") > 0 && line("'\"") <= line("$")
-      "exe "normal g`\""
-    "endif
-  "end
-"endfunction
-
-" Settings for VimClojure
-let vimclojure#HighlightBuiltins=1
-let vimclojure#ParenRainbow=1
-
 " ZoomWin configuration
 map <Leader>z :ZoomWin<CR>
+
+" make Y consistent with C and D
+nnoremap Y y$
 
 " strip trailing whitespace
 "autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
