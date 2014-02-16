@@ -14,9 +14,13 @@ Alternatively, if for some bizarre reason you don't have git installed, you can
 download a zip or tar file using the link on
 [GitHub](http://github.com/alkesh/vim-config).
 
-Finally, symlink <tt>.vimrc</tt>:
+Symlink <tt>.vimrc</tt>:
 
     ln -s ~/.vim/vimrc ~/.vimrc
+
+Finally, install the bundles:
+
+    vim +BundleInstall +qall
 
 ## Keeping up-to-date
 
@@ -25,7 +29,7 @@ Finally, symlink <tt>.vimrc</tt>:
 
 Then in vim:
 
-    :helptags ~/.vim/doc
+    :BundleInstall
 
 ## Local Customisation
 
