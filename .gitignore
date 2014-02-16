@@ -1,11 +1,6 @@
 .netrwhist
 .VimballRecord
-bundle/command-t/ruby/command-t/Makefile
-bundle/command-t/ruby/command-t/*.bundle
-bundle/command-t/ruby/command-t/*.o
-bundle/command-t/ruby/command-t/*.dll
-bundle/command-t/ruby/command-t/*.log
-bundle/vim-ruby-debugger/tmp
+bundle
 tags
 *~
 *.swp
