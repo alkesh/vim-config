@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'Align'
 Bundle 'Tabular'
 Bundle 'Tagbar'
+Bundle 'alkesh/projector_mode'
 Bundle 'bufexplorer.zip'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'ecomba/vim-ruby-refactoring'
@@ -100,9 +101,10 @@ else
   set guifont=Menlo:h10
 endif
 
-
-" ,p to switch to better font for projector
-:noremap <silent> <leader>p :colorscheme mac-classic\|set guifont=Menlo:h14<CR>
+",p to toggle projector mode
+let g:default_colorscheme = 'railscasts'
+let g:projector_colorscheme = 'mac-classic'
+noremap <silent> <leader>p :ToggleProjectorMode<CR>
 
 " ,c to hide hidden characters
 "set listchars=tab:>-,trail:·,eol:$
