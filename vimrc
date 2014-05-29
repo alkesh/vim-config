@@ -13,12 +13,15 @@ Plugin 'Tagbar'
 Plugin 'alkesh/projector_mode'
 Plugin 'bufexplorer.zip'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'dkprice/vim-easygrep'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'ervandew/supertab'
 Plugin 'html5.vim'
+Plugin 'int3/vim-extradite'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'mileszs/ack.vim'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'rake.vim'
 Plugin 'repeat.vim'
 Plugin 'rizzatti/dash.vim'
@@ -30,9 +33,11 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'unimpaired.vim'
+Plugin 'vim-scripts/ZoomWin'
 
 call vundle#end()
 filetype plugin indent on
@@ -92,8 +97,6 @@ if has('gui')
   else
     let g:ruby_debugger_progname = 'gvim'
   endif
-  map <Leader>dg :Rdebugger<CR>
-  map <Leader>dr :RdbTest<CR>
 endif
 
 if $COLORTERM == 'gnome-terminal'
@@ -118,8 +121,8 @@ nmap <silent> <leader>c :set nolist!<CR>
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
 
-" ,h to toggle search result highlighting
-:noremap <silent> <leader>h :set hls!<CR>
+" ,h to dismiss search result highlighting until next search or press of 'n'
+:noremap <silent> <leader>h :noh<CR>
 
 " ,w to toggle line wrap
 :map <silent> <Leader>w :set wrap!<CR>
@@ -133,9 +136,6 @@ nmap <silent> <Leader>m :NERDTreeToggle<CR>
 " ,. to open BufExplorer
 nmap <silent> <unique> <Leader>. :BufExplorer<CR>
 
-" ,u to toggle undo history browser
-nnoremap <Leader>u :GundoToggle<CR>
-
 " ,x to open git commit history for current file
 nnoremap <Leader>x :Extradite<CR>
 
@@ -148,12 +148,8 @@ let g:SuperTabCrMapping = 0
 " ,r for rake
 map <Leader>r :Rake<CR>
 
-" various other ways to run tests
-map <silent> <Leader>rb :wa<CR>:RunAllRubyTests<CR>
-map <silent> <Leader>rc :wa<CR>:RunRubyFocusedContext<CR>
-map <silent> <Leader>rf :wa<CR>:RunRubyFocusedUnitTest<CR>
-
-map <silent> <Leader>rr :wa<CR>:rubyf %<CR>
+" ,s to toggle spelling highlighting
+nmap <silent> <Leader>s :setlocal spell! spelllang=en_gb<CR>
 
 " Tagbar
 nmap <Leader>b :TagbarToggle<CR>
@@ -161,28 +157,29 @@ nmap <Leader>b :TagbarToggle<CR>
 " Dash
 nmap <silent> <leader>d <Plug>DashSearch
 
-
-let g:speckyQuoteSwitcherKey = "<Leader>s'"
-let g:speckySpecSwitcherKey = "<Leader>sx"
-let g:speckyRunSpecKey = "<Leader>ss"
-let g:speckyWindowType = 1
-
+" Ragtag
 let g:ragtag_global_maps = 1
 
 nmap <silent> <Leader>s :setlocal spell! spelllang=en_gb<CR>
 
-"CtrlP configuration
+"CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <leader>t :CtrlP<cr>
 
-" NERDTree configuration
+" Vim-markdown
+let g:vim_markdown_folding_disabled=1
+
+" NERDTree
 " open NERDTree if no files were specified on startup
 autocmd vimenter * if !argc() | NERDTree | endif
 " close vim if only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" ZoomWin configuration
+" ZoomWin
 map <Leader>z :ZoomWin<CR>
+
+" Tabular
+vnoremap <silent> <Leader>aa :Tabularize /\|<CR>
 
 " make Y consistent with C and D
 nnoremap Y y$
