@@ -33,7 +33,7 @@ Finally, install the plugins:
 
 Then in vim:
 
-    :BundleInstall
+    :PluginInstall
 
 ## Local Customisation
 
