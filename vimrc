@@ -1,38 +1,40 @@
 set nocompatible
-"call pathogen#infect()
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'Align'
-Bundle 'Tabular'
-Bundle 'Tagbar'
-Bundle 'alkesh/projector_mode'
-Bundle 'bufexplorer.zip'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'ervandew/supertab'
-Bundle 'gmarik/vundle'
-Bundle 'html5.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'matchit.zip'
-Bundle 'mileszs/ack.vim'
-Bundle 'rake.vim'
-Bundle 'repeat.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'unimpaired.vim'
+" let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
 
+Plugin 'Align'
+Plugin 'Tabular'
+Plugin 'Tagbar'
+Plugin 'alkesh/projector_mode'
+Plugin 'bufexplorer.zip'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'ervandew/supertab'
+Plugin 'html5.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'matchit.zip'
+Plugin 'mileszs/ack.vim'
+Plugin 'rake.vim'
+Plugin 'repeat.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'unimpaired.vim'
+
+call vundle#end()
 filetype plugin indent on
 syntax on
 

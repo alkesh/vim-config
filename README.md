@@ -18,9 +18,13 @@ Symlink <tt>.vimrc</tt>:
 
     ln -s ~/.vim/vimrc ~/.vimrc
 
-Finally, install the bundles:
+Install [Vundle](https://github.com/gmarik/Vundle.vim):
 
-    vim +BundleInstall +qall
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+Finally, install the plugins:
+
+    vim +PluginInstall +qall
 
 ## Keeping up-to-date
 
