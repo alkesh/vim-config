@@ -90,6 +90,16 @@ Written in pure vimscript, so no need to compile anything (unlike Command-T)
   <dt>,t</dt><dd>For those used to using Command-T</dd>
 </dl>
 
+## dash.vim
+
+Search for word under cursor in [Dash](http://kapeli.com/dash). ([more](https://github.com/rizzatti/dash.vim))
+
+*Keybindings*
+
+<dl>
+  <dt>,d</dt><dd>Search for word under cursor in Dash</dd>
+</dl>
+
 ## EasyGrep
 
 Fast and Easy Find and Replace Across Multiple Files ([more](http://www.vim.org/scripts/script.php?script_id=2438))
@@ -210,6 +220,10 @@ Configurable, flexible, intuitive text aligning ([more](http://github.com/godlyg
 ## unimpaired
 
 Pairs of handy bracket maps ([more](http://www.vim.org/scripts/script.php?script_id=1590))
+
+## vim-multiple-cursors
+
+Multiple selection similar to Sublime Text ([more](https://github.com/terryma/vim-multiple-cursors))
 
 ## ZoomWin (23)
 
