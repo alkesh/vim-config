@@ -160,8 +160,6 @@ nmap <silent> <leader>d <Plug>DashSearch
 " Ragtag
 let g:ragtag_global_maps = 1
 
-nmap <silent> <Leader>s :setlocal spell! spelllang=en_gb<CR>
-
 "CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <leader>t :CtrlP<cr>
