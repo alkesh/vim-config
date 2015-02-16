@@ -8,11 +8,14 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Align'
+Plugin 'Indent-Guides'
 Plugin 'Tabular'
 Plugin 'Tagbar'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'alkesh/projector_mode'
 Plugin 'bufexplorer.zip'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'derekwyatt/vim-scala'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'ervandew/supertab'
@@ -35,6 +38,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-surround'
 Plugin 'unimpaired.vim'
 Plugin 'vim-scripts/ZoomWin'
@@ -90,6 +94,7 @@ au BufRead,BufNewFile *.scss set filetype=css
 
 runtime! plugin/matchit.vim " extends % to do/end etc
 
+colorscheme default
 if has('gui')
   colorscheme railscasts
   if has("mac")
@@ -229,6 +234,9 @@ vnoremap <silent> <Leader>t> :Align =><CR>
 
 " Use xmllint to pretty format XML
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
+" enable indent guides
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
