@@ -8,22 +8,26 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Align'
-Plugin 'Indent-Guides'
 Plugin 'Tabular'
 Plugin 'Tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'alkesh/projector_mode'
+Plugin 'bling/vim-airline'
 Plugin 'bufexplorer.zip'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'ervandew/supertab'
+Plugin 'gcmt/tube.vim'
 Plugin 'html5.vim'
 Plugin 'int3/vim-extradite'
+Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'mileszs/ack.vim'
+Plugin 'nvie/vim-togglemouse'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'rake.vim'
 Plugin 'repeat.vim'
@@ -38,8 +42,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-vinegar'
 Plugin 'unimpaired.vim'
 Plugin 'vim-scripts/ZoomWin'
 
@@ -94,21 +98,19 @@ au BufRead,BufNewFile *.scss set filetype=css
 
 runtime! plugin/matchit.vim " extends % to do/end etc
 
-colorscheme default
-if has('gui')
-  colorscheme railscasts
-  if has("mac")
-    let g:ruby_debugger_progname = 'mvim'
-  else
-    let g:ruby_debugger_progname = 'gvim'
-  endif
+colorscheme railscasts
+if has("mac")
+  let g:ruby_debugger_progname = 'mvim'
+else
+  let g:ruby_debugger_progname = 'gvim'
 endif
 
 if $COLORTERM == 'gnome-terminal'
   set term=xterm-color
   set guifont=DejaVu\ Sans\ Mono\ 10
 else
-  set guifont=Menlo:h10
+  set guifont=Menlo\ for\ Powerline:h10
+  "set guifont=Menlo:h10
 endif
 
 ",p to toggle projector mode
@@ -168,6 +170,7 @@ let g:ragtag_global_maps = 1
 "CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <leader>t :CtrlP<cr>
+map <leader>g :CtrlPModified<cr>
 
 " Vim-markdown
 let g:vim_markdown_folding_disabled=1
@@ -235,8 +238,30 @@ vnoremap <silent> <Leader>t> :Align =><CR>
 " Use xmllint to pretty format XML
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
-" enable indent guides
+" customize line-number background (railscasts defaults are a bit rubbish)
+highlight LineNr ctermbg=241 ctermfg=0 guibg=DimGray
+
+" enable, and customise  indentguides
+if !has('gui')
+  let g:indent_guides_auto_colors = 0
+endif
 let g:indent_guides_enable_on_vim_startup = 1
+highlight IndentGuidesOdd ctermbg=233
+highlight IndentGuidesEven ctermbg=235
+
+" settings for the git-gutter
+highlight SignColumn ctermbg=234
+
+" airline settings
+"let g:airline_theme= "luna"
+let g:airline_theme= "murmur"
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+
+" use iterm for Tube plugin
+let g:tube_terminal = "iterm"
 
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
