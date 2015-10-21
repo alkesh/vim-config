@@ -10,8 +10,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Align'
 Plugin 'Tabular'
 Plugin 'Tagbar'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'alkesh/projector_mode'
+Plugin 'avakhov/vim-yaml'
 Plugin 'bling/vim-airline'
 Plugin 'bufexplorer.zip'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -19,15 +21,17 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'ervandew/supertab'
-Plugin 'gcmt/tube.vim'
-Plugin 'html5.vim'
+Plugin 'fatih/vim-go'
 Plugin 'int3/vim-extradite'
 Plugin 'jasoncodes/ctrlp-modified.vim'
+Plugin 'jgdavey/tslime.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'mileszs/ack.vim'
-Plugin 'nvie/vim-togglemouse'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nvie/vim-togglemouse'
+Plugin 'othree/html5.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'rake.vim'
 Plugin 'repeat.vim'
@@ -109,8 +113,7 @@ if $COLORTERM == 'gnome-terminal'
   set term=xterm-color
   set guifont=DejaVu\ Sans\ Mono\ 10
 else
-  set guifont=Menlo\ for\ Powerline:h10
-  "set guifont=Menlo:h10
+  set guifont=Monaco:h10
 endif
 
 ",p to toggle projector mode
@@ -154,6 +157,9 @@ let g:SuperTabCrMapping = 0
 
 " ,r for rake
 map <Leader>r :Rake<CR>
+
+" ,rr to rerun last tmx command
+map <Leader>rr :call Send_to_Tmux("!!\n")<CR>
 
 " ,s to toggle spelling highlighting
 nmap <silent> <Leader>s :setlocal spell! spelllang=en_gb<CR>
@@ -260,8 +266,11 @@ let g:airline_left_alt_sep = '⮁'
 let g:airline_right_sep = '⮂'
 let g:airline_right_alt_sep = '⮃'
 
-" use iterm for Tube plugin
-let g:tube_terminal = "iterm"
+" set clipboard to unnamed, so it uses the system clipboard
+"set clipboard=unnamed
+
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
 
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
