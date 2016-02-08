@@ -181,6 +181,9 @@ map <leader>g :CtrlPModified<cr>
 " Vim-markdown
 let g:vim_markdown_folding_disabled=1
 
+" NERDCommenter
+let NERDSpaceDelims=1
+
 " NERDTree
 " open NERDTree if no files were specified on startup
 autocmd vimenter * if !argc() | NERDTree | endif
@@ -208,8 +211,9 @@ endfunction
 nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
 
 let g:syntastic_auto_loc_list=1
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
-map <Leader>rt :!ctags -R *<CR><CR>
+map <Leader>rt :!ctags --exclude=*.js -R *<CR><CR>
 
 function! OpenInBrowser(url)
   if has("mac")
