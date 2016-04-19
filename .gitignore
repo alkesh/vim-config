@@ -1,8 +1,9 @@
-.netrwhist
-.VimballRecord
-bundle
-tags
-*~
 *.swp
-tmp
+*~
 .DS_Store
+.VimballRecord
+.netrwhist
+bundle
+init.vim
+tags
+tmp

@@ -18,6 +18,10 @@ Symlink <tt>.vimrc</tt>:
 
     ln -s ~/.vim/vimrc ~/.vimrc
 
+If you are running neovim, run the setup script:
+
+    ./neovim_setup
+
 Install [Vundle](https://github.com/gmarik/Vundle.vim):
 
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -268,4 +272,5 @@ The run_tags scripts are available for ubuntu ([script](https://gist.github.com/
 
 # Vim Resources
 
-See kerry's vim bookmarks on [pinboard](http://pinboard.in/u:kerryb/t:vim).
+See Kerry's vim bookmarks on [pinboard](http://pinboard.in/u:kerryb/t:vim).
+Also, Kerry seems to have moved on from using his own config, to using this one: https://github.com/AdamWhittingham/vim-config
