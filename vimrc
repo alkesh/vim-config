@@ -16,6 +16,7 @@ Plugin 'alkesh/projector_mode'
 Plugin 'avakhov/vim-yaml'
 Plugin 'bling/vim-airline'
 Plugin 'bufexplorer.zip'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'dkprice/vim-easygrep'
@@ -25,6 +26,7 @@ Plugin 'fatih/vim-go'
 Plugin 'int3/vim-extradite'
 Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'jgdavey/tslime.vim'
+Plugin 'jgdavey/vim-turbux'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'mileszs/ack.vim'
@@ -47,7 +49,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vinegar'
 Plugin 'unimpaired.vim'
 Plugin 'vim-scripts/ZoomWin'
 
@@ -116,6 +117,9 @@ else
   set guifont=Monaco:h10
 endif
 
+" highlight cursor line
+:set cursorline
+
 ",p to toggle projector mode
 let g:default_colorscheme = 'railscasts'
 let g:projector_colorscheme = 'mac-classic'
@@ -162,7 +166,7 @@ map <Leader>r :Rake<CR>
 map <Leader>rr :call Send_to_Tmux("!!\n")<CR>
 
 " ,s to toggle spelling highlighting
-nmap <silent> <Leader>s :setlocal spell! spelllang=en_gb<CR>
+nmap <silent> <Leader>sp :setlocal spell! spelllang=en_gb<CR>
 
 " Tagbar
 nmap <Leader>b :TagbarToggle<CR>
@@ -269,6 +273,14 @@ let g:airline_left_sep = '⮀'
 let g:airline_left_alt_sep = '⮁'
 let g:airline_right_sep = '⮂'
 let g:airline_right_alt_sep = '⮃'
+
+" turbux
+let g:turbux_runner = 'tslime'
+let g:turbux_command_rspec = 's'
+let g:turbux_command_cucumber = 'c'
+let g:no_turbux_mappings = 1
+map <leader>s <Plug>SendTestToTmux
+map <leader>S <Plug>SendFocusedTestToTmux
 
 " set clipboard to unnamed, so it uses the system clipboard
 "set clipboard=unnamed
