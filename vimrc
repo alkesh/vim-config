@@ -44,6 +44,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
@@ -95,6 +96,9 @@ set backspace=start,indent,eol
 
 " mouse mode for terminal
 set mouse=a
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 autocmd FileType make set noexpandtab
 
