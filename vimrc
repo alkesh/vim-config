@@ -27,7 +27,7 @@ Plugin 'int3/vim-extradite'
 Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'jgdavey/vim-turbux'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'mileszs/ack.vim'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -184,6 +184,9 @@ nmap <silent> <leader>d <Plug>DashSearch
 let g:ragtag_global_maps = 1
 
 "CtrlP
+let g:ctrlp_path_nolim = 1
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth = 40
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <leader>t :CtrlP<cr>
 map <leader>g :CtrlPModified<cr>
@@ -223,7 +226,7 @@ nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
 let g:syntastic_auto_loc_list=1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
-map <Leader>rt :!ctags --exclude=*.js -R *<CR><CR>
+map <Leader>rt :!ctags --exclude=*.js --links=no -R *<CR><CR>
 
 function! OpenInBrowser(url)
   if has("mac")
