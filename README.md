@@ -242,12 +242,12 @@ Zoom in/out  of windows (toggle between one window and multi-window) ([more](htt
 # Other Keybindings
 
 <dl>
-  <dt>ctrl-]</dt><dd>Jump to definition (needs exuberant ctags installed - see Tags section below)</dd>
+  <dt>ctrl-]</dt><dd>Jump to definition (needs universal ctags installed - see Tags section below)</dd>
   <dt>,c</dt><dd>Hide/show tabs and trailing spaces</dd>
   <dt>,h</dt><dd>Hide search highlighting</dd>
   <dt>,rr</dt><dd>Run ruby file</dd>
   <dt>,,</dt><dd>Run rspec on current file</dd>
-  <dt>,rt</dt><dd>Run run_tags script (assuming it's installed and in the path)</dd>
+  <dt>,rt</dt><dd>Generate tags (using ctags)</dd>
   <dt>,s</dt><dd>Show/hide spelling errors</dd>
   <dt>,sw</dt><dd>Strip trailing whitespace</dd>
   <dt>,w</dt><dd>Toggle word wrapping</dd>
@@ -259,10 +259,7 @@ Zoom in/out  of windows (toggle between one window and multi-window) ([more](htt
 
 # Tags
 
-The ctrl-] and ,rt shortcuts need both [exuberant ctags](http://blog.tobiascrawley.net/2009/01/01/generating-a-tags-file-from-a-git-hook/),
-and the run_tags script installed.
-
-The run_tags scripts are available for ubuntu ([script](https://gist.github.com/186567)/[raw](https://raw.github.com/gist/186567/d26a00ef99f4132a8bb5a58e981d93f4663f4ca8/run_tags.rb)) and  OS X ([script](https://gist.github.com/1564787)/[raw](https://raw.github.com/gist/1564787/484c239f55fe33d301e11fd29dff05221b6e2a04/run_tags.rb))
+The ctrl-] and ,rt shortcuts needs [universal ctags](https://github.com/universal-ctags/homebrew-universal-ctags) installed
 
 # Other Commands
 
