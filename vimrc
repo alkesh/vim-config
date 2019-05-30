@@ -226,7 +226,7 @@ nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
 let g:syntastic_auto_loc_list=1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
-map <Leader>rt :!ctags --exclude=*.js --links=no -R *<CR><CR>
+map <Leader>rt :!ctags --exclude=*.js --links=no --extra=q -R *<CR><CR>
 
 function! OpenInBrowser(url)
   if has("mac")
