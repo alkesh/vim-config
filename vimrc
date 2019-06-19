@@ -189,7 +189,7 @@ let g:ctrlp_max_depth = 40
 let g:ctrlp_clear_cache_on_exit = 0
 " let g:ctrlp_user_command = 'find %s -type f' " use local find command for speed
 " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " ignore gitignore files
-let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|tmp|vendor)$'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|bower_components|node_modules|tmp|vendor)$'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <leader>t :CtrlP<cr>
 map <leader>g :CtrlPModified<cr>
