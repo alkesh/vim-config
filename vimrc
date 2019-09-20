@@ -120,7 +120,7 @@ if $COLORTERM == 'gnome-terminal'
   set term=xterm-color
   set guifont=DejaVu\ Sans\ Mono\ 10
 else
-  set guifont=Monaco:h10
+  set guifont=Monaco\ for\ Powerline:h10
 endif
 
 " highlight cursor line
@@ -289,10 +289,10 @@ highlight SignColumn ctermbg=234
 " airline settings
 "let g:airline_theme= "luna"
 let g:airline_theme= "murmur"
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 " turbux
 let g:turbux_runner = 'tslime'
