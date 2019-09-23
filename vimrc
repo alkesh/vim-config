@@ -61,7 +61,6 @@ syntax on
 
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set guioptions-=T " no toolbar
-set statusline=%<%f\ %h%m%r%=%-20.(line=%l,col=%c%V,totlin=%L%)\%h%m%r%=%-40(,%n%Y%)\%P%#warningmsg#%{SyntasticStatuslineFlag()}%*
 set laststatus=2  " Always show status line.
 set number " line numbers
 set scrolloff=3 " More context around cursor
