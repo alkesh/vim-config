@@ -17,6 +17,7 @@ Plugin 'avakhov/vim-yaml'
 Plugin 'bufexplorer.zip'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'dense-analysis/ale'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'ecomba/vim-ruby-refactoring'
@@ -41,7 +42,6 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-cucumber'
@@ -225,8 +225,13 @@ function! StripTrailingWhitespace()
 endfunction
 nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
 
-let g:syntastic_auto_loc_list=1
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+" ALE linting
+let b:ale_linters = {'ruby': ['rubocop', 'ruby']}
+let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_sign_error = '⚠'
+let g:ale_sign_warning = '⚠'
+let g:ale_sign_column_always = 1      " Always show the sign column to avoid annoying popping in
+let g:ale_lint_delay = 1000           " Lint at most once per second incase we're on battery power
 
 " refresh both ctags and CtrlP cache
 function! RebuildCaches()
@@ -292,6 +297,7 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+let g:airline#extensions#ale#enabled = 1
 
 " turbux
 let g:turbux_runner = 'tslime'
