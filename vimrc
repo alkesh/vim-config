@@ -183,6 +183,9 @@ nmap <silent> <leader>d <Plug>DashSearch
 " Ragtag
 let g:ragtag_global_maps = 1
 
+" ,u to run rubocop using ALEFix
+nmap <Leader>u :ALEFix<CR>
+
 "CtrlP
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 40

@@ -60,6 +60,16 @@ Work with several variants of a word at once ([more](http://www.vim.org/scripts/
 
 Plugin for the Perl module / CLI script 'ack' ([more](http://www.vim.org/scripts/script.php?script_id=2572))
 
+## ALE
+
+Modern syntax checker ([more](https://github.com/dense-analysis/ale))
+
+*Keybindings*
+
+<dl>
+  <dt>,u</dt><dd>Run `rubocop -a` to fix issues idenified by rubocop</dd>
+</dl>
+
 ## Align
 
 Help folks to align text, eqns, declarations, tables, etc ([more](http://www.vim.org/scripts/script.php?script_id=294))
@@ -206,10 +216,6 @@ Do all your insert-mode completion with Tab ([more](http://www.vim.org/scripts/s
 ## surround
 
 Delete/change/add parentheses/quotes/XML-tags/much more with ease ([more](http://www.vim.org/scripts/script.php?script_id=1697))
-
-## syntastic
-
-Automatic syntax checking ([more](http://www.vim.org/scripts/script.php?script_id=2736))
 
 ## Tabular
 
