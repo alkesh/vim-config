@@ -228,6 +228,7 @@ nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
 " ALE linting
 let b:ale_linters = {'ruby': ['rubocop', 'ruby']}
 let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_fixers = {'ruby': ['rubocop']}
 let g:ale_sign_error = '⚠'
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_column_always = 1      " Always show the sign column to avoid annoying popping in
