@@ -67,7 +67,7 @@ Modern syntax checker ([more](https://github.com/dense-analysis/ale))
 *Keybindings*
 
 <dl>
-  <dt>,u</dt><dd>Run `rubocop -a` to fix issues idenified by rubocop</dd>
+  <dt>,u</dt><dd>Run <tt>rubocop -a</tt> to fix issues idenified by rubocop</dd>
 </dl>
 
 ## Align
