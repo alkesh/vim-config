@@ -186,16 +186,22 @@ let g:ragtag_global_maps = 1
 " ,u to run rubocop using ALEFix
 nmap <Leader>u :ALEFix<CR>
 
+" copy current filename and path to the system clipboard
+nmap <Leader>ff :let @*=@%<CR>
+
 "CtrlP
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 40
 let g:ctrlp_clear_cache_on_exit = 0
-" let g:ctrlp_user_command = 'find %s -type f' " use local find command for speed
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " ignore gitignore files
 let g:ctrlp_custom_ignore = '\v[\/](\.git|bower_components|log|node_modules|tmp|vendor)$'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <leader>t :CtrlP<cr>
 map <leader>g :CtrlPModified<cr>
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
 
 " Vim-markdown
 let g:vim_markdown_folding_disabled=1
@@ -274,6 +280,11 @@ noremap RR :call OpenRailsDoc(expand('<cword>'))<CR><CR>
 
 " :SudoW to save file using sudo (must be already authorised, eg sudo -v)
 command! -bar -nargs=0 SudoW   :silent exe "write !sudo tee % >/dev/null"|silent edit!
+
+" ack.vim
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --no-heading'
+endif
 
 " Align =>
 vnoremap <silent> <Leader>t> :Align =><CR>

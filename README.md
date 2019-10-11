@@ -250,6 +250,7 @@ Zoom in/out  of windows (toggle between one window and multi-window) ([more](htt
 <dl>
   <dt>ctrl-]</dt><dd>Jump to definition (needs universal ctags installed - see Tags section below)</dd>
   <dt>,c</dt><dd>Hide/show tabs and trailing spaces</dd>
+  <dt>,ff</dt><dd>Copy current filename and path to the system clipboard</dd>
   <dt>,h</dt><dd>Hide search highlighting</dd>
   <dt>,rr</dt><dd>Run ruby file</dd>
   <dt>,,</dt><dd>Run rspec on current file</dd>
