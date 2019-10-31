@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Align'
+Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'Tabular'
 Plugin 'Tagbar'
 Plugin 'Xuyuanp/nerdtree-git-plugin'

@@ -209,6 +209,17 @@ Refactoring tool for Ruby in vim! ([more](https://github.com/ecomba/vim-ruby-ref
 
 See [relish documentation](http://relishapp.com/despo/vim-ruby-refactoring) for examples.
 
+## splitjoin
+
+Switch between single-line and multi-line statements ([more](https://github.com/AndrewRadev/splitjoin.vim))
+
+*Keybindings*
+
+<dl>
+  <dt>gS</dt><dd>to split a one-liner into multiple lines</dd>
+  <dt>gJ</dt><dd>(with the cursor on the first line of a block) to join a block into a single-line statement</dd>
+</dl>
+
 ## SuperTab
 
 Do all your insert-mode completion with Tab ([more](http://www.vim.org/scripts/script.php?script_id=1643))
