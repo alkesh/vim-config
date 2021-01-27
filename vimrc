@@ -247,7 +247,8 @@ let g:ale_lint_delay = 1000           " Lint at most once per second incase we'r
 
 " refresh both ctags and CtrlP cache
 function! RebuildCaches()
-  exec '!ctags --exclude=*.js --exclude=.git --exclude=bower_components --exclude=node_modules --exclude=tmp --exclude=vendor --exclude=log --links=no --extras=+q -R *'
+  " needs universal ctags: https://github.com/universal-ctags/homebrew-universal-ctags
+  exec '!ctags --exclude=.js --exclude=.git --exclude=bower_components --exclude=node_modules --exclude=tmp --exclude=vendor --exclude=log --links=no --extras=+q -R *'
   if exists("g:loaded_ctrlp") && g:loaded_ctrlp
     CtrlPClearCache
   endif
