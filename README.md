@@ -81,6 +81,16 @@ Help folks to align text, eqns, declarations, tables, etc ([more](http://www.vim
   <dt>,t&gt;</dt><dd>Align on =></dd>
 </dl>
 
+## Blockle ([more](https://github.com/jgdavey/vim-blockle))
+
+Toggle between block styles `do`..`end` and `{`..`}`.
+
+*Keybindings*
+
+<dl>
+  <dt>,b</dt><dd>Toggle block style</dd>
+</dl>
+
 ## bufexplorer
 
 Buffer explorer/browser ([more](http://www.vim.org/scripts/script.php?script_id=42))

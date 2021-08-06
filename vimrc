@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Align'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'Tabular'
-Plugin 'Tagbar'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'alkesh/projector_mode'
@@ -30,6 +29,7 @@ Plugin 'int3/vim-extradite'
 Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'jgdavey/vim-turbux'
+Plugin 'jgdavey/vim-blockle'
 Plugin 'matchit.zip'
 Plugin 'mileszs/ack.vim'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -175,9 +175,6 @@ map <Leader>rr :call Send_to_Tmux("!!\n")<CR>
 " ,s to toggle spelling highlighting
 nmap <silent> <Leader>sp :setlocal spell! spelllang=en_gb<CR>
 
-" Tagbar
-nmap <Leader>b :TagbarToggle<CR>
-
 " Dash
 nmap <silent> <leader>d <Plug>DashSearch
 
@@ -248,7 +245,7 @@ let g:ale_lint_delay = 1000           " Lint at most once per second incase we'r
 " refresh both ctags and CtrlP cache
 function! RebuildCaches()
   " needs universal ctags: https://github.com/universal-ctags/homebrew-universal-ctags
-  exec '!ctags --exclude=.js --exclude=.git --exclude=bower_components --exclude=node_modules --exclude=tmp --exclude=vendor --exclude=log --links=no --extras=+q -R *'
+  exec '!ctags --exclude=.js --exclude=.git --exclude=bower_components --exclude=node_modules --exclude=tmp --exclude=vendor --exclude=log --exclude=clients --links=no --extras=+q -R *'
   if exists("g:loaded_ctrlp") && g:loaded_ctrlp
     CtrlPClearCache
   endif
