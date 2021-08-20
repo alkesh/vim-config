@@ -22,13 +22,9 @@ If you are running neovim, run the setup script:
 
     ./neovim_setup
 
-Install [Vundle](https://github.com/gmarik/Vundle.vim):
-
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 Finally, install the plugins:
 
-    vim +PluginInstall +qall
+    vim +PlugInstall +qall
 
 ## Keeping up-to-date
 
@@ -37,7 +33,7 @@ Finally, install the plugins:
 
 Then in vim:
 
-    :PluginInstall
+    :PlugInstall
 
 ## Local Customisation
 
