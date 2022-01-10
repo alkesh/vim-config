@@ -1,3 +1,2 @@
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
-ln -s ~/.vim/vimrc $XDG_CONFIG_HOME/nvim/init.vim

@@ -8,3 +8,4 @@ init.vim
 plugins
 tags
 tmp
+undo_data
