@@ -31,13 +31,21 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Fantastic langauge
 " Linting
 Plug 'dense-analysis/ale'
 
+" Markdown
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " Navigation & Search tools
 " Plug 'ludovicchabant/vim-gutentags' " regenerates tags unobtrusively
 Plug 'mileszs/ack.vim' " Use ack (or ag, or rg) for searching files
 Plug 'tpope/vim-projectionist' " Map tools and actions based on the project
 Plug 'tpope/vim-unimpaired' " Navigate quicklists (amongst other things)
 
+" Ruby and Rails
+Plug 'tpope/vim-rails'
+
 " Text manipulation and movement
+Plug 'junegunn/vim-easy-align' " Align code and tables
 Plug 'AndrewRadev/splitjoin.vim' " Quick joining or splitting of programming constructs (ie. `if...else...` to `? ... : ...`)
 Plug 'kshenoy/vim-signature' " Show marks in the gutter to help me use them more
 Plug 'preservim/nerdcommenter' " Comment functions
@@ -50,7 +58,8 @@ Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes & Tmux panes easi
 Plug 'jlanzarotta/bufexplorer' " explore open buffers
 Plug 'lukas-reineke/indent-blankline.nvim' " Show indentation guides
 Plug 'mhinz/vim-startify' " Start Vim with a more useful start screen
-" Plug 'nvim-telescope/telescope.nvim' " Powerful UI for searching and file traversing
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " Powerful UI for searching and file traversing
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " Faster finding using compiled FZF, likely to be baked in to Telescope someday: https://github.com/nvim-telescope/telescope.nvim/issues/988
 Plug 'preservim/nerdtree' " Project filesystem tree
 
 " Common dependencies
@@ -347,23 +356,24 @@ EOF
 " Setup Telescope
 " ----------------------------------------------
 
-" lua << EOF
-" require('telescope').setup{
-"   defaults = {
-"     selection_caret = "➜ ",
-"     file_ignore_patterns = {
-"       'tags',
-"       'vendor/.*'
-"     },
-"     layout_strategy = flex,
-"     winblend = 20,
-"     show_line = false,
-"     prompt_title = false,
-"     results_title = false,
-"     preview_title = false,
-"   }
-" }
-" EOF
+lua << EOF
+require('telescope').setup{
+  defaults = {
+    selection_caret = "➜ ",
+    file_ignore_patterns = {
+      'tags',
+      'vendor/.*'
+    },
+    layout_strategy = flex,
+    winblend = 20,
+    show_line = false,
+    prompt_title = false,
+    results_title = false,
+    preview_title = false,
+  }
+}
+require('telescope').load_extension('fzf')
+EOF
 
 " ----------------------------------------------
 " Strip trailing whitespace
@@ -403,6 +413,13 @@ map <silent> <Leader>f :NERDTreeFind<CR>
 " copy current filename and path to the system clipboard
 nmap <Leader>ff :let @*=@%<CR>
 
+" <leader>g to run Telescope live_grep
+nmap <silent> <Leader>g :Telescope live_grep<CR>
+
+" align code and tables
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " <leader>h to dismiss search result highlighting until next search or press of 'n'
 :noremap <silent> <leader>h :noh<CR>
 
@@ -414,6 +431,9 @@ map <leader>rt :!ctags --exclude=.js --exclude=.git --exclude=bower_components -
 
 "  <leader>sw to strip whitespace off the ends
 nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
+
+" <leader>t to run Telescope find_files
+nmap <silent> <Leader>t :Telescope find_files<CR>
 
 " ,u to run rubocop using ALEFix
 nmap <Leader>u :ALEFix<CR>

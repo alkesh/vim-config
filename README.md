@@ -66,20 +66,9 @@ Modern syntax checker ([more](https://github.com/dense-analysis/ale))
   <dt>,u</dt><dd>Run <tt>rubocop -a</tt> to fix issues idenified by rubocop</dd>
 </dl>
 
-## Align
+## Blockle
 
-Help folks to align text, eqns, declarations, tables, etc ([more](http://www.vim.org/scripts/script.php?script_id=294))
-
-*Keybindings*
-
-<dl>
-  <dt>,tlt</dt><dd>Align LaTEX tables (to avoid clashing with our existing ,tt mapping)</dd>
-  <dt>,t&gt;</dt><dd>Align on =></dd>
-</dl>
-
-## Blockle ([more](https://github.com/jgdavey/vim-blockle))
-
-Toggle between block styles `do`..`end` and `{`..`}`.
+Toggle between block styles `do`..`end` and `{`..`}`([more](https://github.com/jgdavey/vim-blockle))
 
 *Keybindings*
 
@@ -118,6 +107,19 @@ Search for word under cursor in [Dash](http://kapeli.com/dash). ([more](https://
 
 <dl>
   <dt>,d</dt><dd>Search for word under cursor in Dash</dd>
+</dl>
+
+## Easy Align
+
+Align text, tables, etc ([more](https://github.com/junegunn/vim-easy-align))
+
+Supports visual mode, and standard vim movement
+
+*Keybindings*
+
+<dl>
+  <dt>ga*|</dt><dd>Align tables</dd>
+  <dt>ga=</dt><dd>Align on =</dd>
 </dl>
 
 ## EasyGrep
@@ -234,14 +236,13 @@ Do all your insert-mode completion with Tab ([more](http://www.vim.org/scripts/s
 
 Delete/change/add parentheses/quotes/XML-tags/much more with ease ([more](http://www.vim.org/scripts/script.php?script_id=1697))
 
-## Tabular
+## Telescope
 
-Configurable, flexible, intuitive text aligning ([more](http://github.com/godlygeek/tabular/blob/master/doc/Tabular.txt))
-
-*Keybindings*
+Fuzzy finder for files and lists ([more](https://github.com/nvim-telescope/telescope.nvim))
 
 <dl>
-  <dt>,aa</dt><dd>(when text is selected) format tables made with pipes (|)</dd>
+  <dt>,t</dt><dd>find files</dd>
+  <dt>,g</dt><dd>grep contents of files</dd>
 </dl>
 
 ## unimpaired
