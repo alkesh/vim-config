@@ -22,6 +22,9 @@ Plug 'tpope/vim-endwise'      " auto-complete end keyword
 Plug 'windwp/nvim-autopairs'  " Auto close quotes, brackets in a way that doesn't suck
 Plug 'windwp/nvim-ts-autotag' " Auto close HTML and XML tags too
 
+"Copilot
+Plug 'github/copilot.vim'
+
 " Git
 Plug 'tpope/vim-fugitive'
 
@@ -43,6 +46,7 @@ Plug 'tpope/vim-unimpaired' " Navigate quicklists (amongst other things)
 
 " Ruby and Rails
 Plug 'tpope/vim-rails'
+Plug 'jgdavey/vim-blockle'
 
 " Text manipulation and movement
 Plug 'junegunn/vim-easy-align' " Align code and tables

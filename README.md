@@ -5,7 +5,7 @@ If necessary, backup and remove your <tt>~/.vim</tt> directory and
 
 Clone this repository to <tt>~/git</tt>:
 
-    git clone git://github.com/alkesh/vim-config.git ~/.vim
+    git clone git@github.com:alkesh/vim-config.git ~/.vim
 
 (If you're behind a firewall that blocks port 9418, replace <tt>git:</tt> with
 <tt>https:</tt> in the above URL.)
@@ -13,6 +13,8 @@ Clone this repository to <tt>~/git</tt>:
 Alternatively, if for some bizarre reason you don't have git installed, you can
 download a zip or tar file using the link on
 [GitHub](http://github.com/alkesh/vim-config).
+
+Switch to the nvim branch
 
 Symlink <tt>.vimrc</tt>:
 
@@ -23,8 +25,9 @@ If you are running neovim, run the setup script:
     ./neovim_setup
 
 Finally, install the plugins:
+  * start nvim
+  * run: `:PlugInstall`
 
-    vim +PlugInstall +qall
 
 ## Keeping up-to-date
 
@@ -86,29 +89,6 @@ Buffer explorer/browser ([more](http://www.vim.org/scripts/script.php?script_id=
   <dt>,.</dt><dd>Show buffer explorer</dd>
 </dl>
 
-## CtrlP
-
-Fast file navigation for VIM ([more](http://www.vim.org/scripts/script.php?script_id=3736))
-
-Written in pure vimscript, so no need to compile anything (unlike Command-T)
-
-*Keybindings*
-
-<dl>
-  <dt>ctrl-p</dt><dd>The default keybinding</dd>
-  <dt>,t</dt><dd>For those used to using Command-T</dd>
-</dl>
-
-## dash.vim
-
-Search for word under cursor in [Dash](http://kapeli.com/dash). ([more](https://github.com/rizzatti/dash.vim))
-
-*Keybindings*
-
-<dl>
-  <dt>,d</dt><dd>Search for word under cursor in Dash</dd>
-</dl>
-
 ## Easy Align
 
 Align text, tables, etc ([more](https://github.com/junegunn/vim-easy-align))
@@ -122,35 +102,21 @@ Supports visual mode, and standard vim movement
   <dt>ga=</dt><dd>Align on =</dd>
 </dl>
 
-## EasyGrep
+## nvim autopairs
 
-Fast and Easy Find and Replace Across Multiple Files ([more](http://www.vim.org/scripts/script.php?script_id=2438))
-
-## endwise
-
-Wisely add "end" in ruby, endfunction/endif/more in vim script, etc ([more](http://www.vim.org/scripts/script.php?script_id=2386))
-
-## Extradite
-
-Brings up the commit log of the current file. In the log view ([more](http://int3.github.com/vim-extradite/))
-
-*Keybindings*
-
-<dl>
-  <dt>,x</dt><dd>Open commit history for current file</dd>
-</dl>
+Add "end" in ruby ([more](https://github.com/windwp/nvim-autopairs))
 
 ## Fugitive
 
 A Git wrapper so awesome, it should be illegal ([more](http://www.vim.org/scripts/script.php?script_id=2975))
 
+## Github Copilot
+
+Run `:Copilot setup` to set up copilot
+
 ## markdown
 
 Syntax highlighting for Markdown ([more](http://plasticboy.com/markdown-vim-mode/))
-
-## matchit
-
-Extended % matching for HTML, LaTeX, and many other languages ([more](http://www.vim.org/scripts/script.php?script_id=39))
 
 ## NERD tree
 
@@ -167,45 +133,9 @@ A tree explorer plugin for navigating the filesystem ([more](http://www.vim.org/
 
 A plugin that allows for easy commenting of code for many filetypes ([more](http://www.vim.org/scripts/script.php?script_id=1218))
 
-## ragtag
-
-A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more ([more](http://www.vim.org/scripts/script.php?script_id=1896))
-
-If you have already typed 'foo', the following shortcuts apply (with the cursor position marked by ^):
-
-<dl>
-  <dt>&lt;C-X&gt;=</dt><dd>foo&lt;%= ^ %&gt;</dd>
-  <dt>&lt;C-X&gt;+</dt><dd>&lt;%= foo^ %&gt;</dd>
-  <dt>&lt;C-X&gt;-</dt><dd>foo&lt;% ^ %&gt;</dd>
-  <dt>&lt;C-X&gt;_</dt><dd>&lt;% foo^ %&gt;</dd>
-  <dt>&lt;C-X&gt;'</dt><dd>foo&lt;%# ^ %&gt;</dd>
-  <dt>&lt;C-X&gt;"</dt><dd>&lt;%# foo^ %&gt;</dd>
-  <dt>&lt;C-X&gt;&lt;Space&gt;</dt><dd>&lt;foo&gt;^&lt;/foo&gt;</dd>
-  <dt>&lt;C-X&gt;&lt;CR&gt;</dt><dd>&lt;foo&gt;<br />^<br />&lt;/foo&gt;</dd>
-  <dt>&lt;C-X&gt;/</dt><dd>Last HTML tag closed</dd>
-  <dt>&lt;C-X&gt;!</dt><dd>&lt;!DOCTYPE...&gt;/&lt;?xml ...?&gt; (menu)</dd>
-  <dt>&lt;C-X&gt;@</dt><dd>&lt;link rel="stylesheet" ...&gt;</dd>
-  <dt>&lt;C-X&gt;#</dt><dd>&lt;meta http-equiv="Content-Type" ... /&gt; <em>ragtag-CTRL-X_#</em></dd>
-  <dt>&lt;C-X&gt;$</dt><dd>&lt;script src="/javascripts/^.js"&gt;&lt;/script&gt; <em>ragtag-CTRL-X_$</em></dd>
-</dl>
-
-## rails
-
-Ruby on Rails: easy file navigation, enhanced syntax highlighting, and more ([more](http://www.vim.org/scripts/script.php?script_id=1567))
-
-*Keybindings*
-
-<dl>
-  <dt>,r</dt><dd>run rake</dd>
-</dl>
-
-## rake
-
-It's like rails.vim without the rails ([more](http://www.vim.org/scripts/script.php?script_id=3669))
-
 ## repeat
 
-Use the repeat command (.) with supported plugins ([more](http://www.vim.org/scripts/script.php?script_id=2136))
+Use the repeat command (.) with supported plugins ([more](https://github.com/tpope/vim-repeat))
 
 ## ruby
 
