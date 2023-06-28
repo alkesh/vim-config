@@ -14,10 +14,11 @@ Plug 'neovim/nvim-lspconfig'  " Pre-built configurations for LSP servers
 
 " Autocompletion
 Plug 'hrsh7th/nvim-cmp'       " Completion engine which can pull from many sources
-Plug 'hrsh7th/cmp-buffer'     " cmp source for the open buffers
-Plug 'hrsh7th/cmp-nvim-lsp'   " cmp source for LSP
-Plug 'hrsh7th/cmp-path'       " cmp source for paths
-Plug 'hrsh7th/cmp-vsnip'      " cmp source for vsnip snippets
+" cmp disabled for now - clashes with Copilot
+"Plug 'hrsh7th/cmp-buffer'     " cmp source for the open buffers
+"Plug 'hrsh7th/cmp-nvim-lsp'   " cmp source for LSP
+"Plug 'hrsh7th/cmp-path'       " cmp source for paths
+"Plug 'hrsh7th/cmp-vsnip'      " cmp source for vsnip snippets
 Plug 'tpope/vim-endwise'      " auto-complete end keyword
 Plug 'windwp/nvim-autopairs'  " Auto close quotes, brackets in a way that doesn't suck
 Plug 'windwp/nvim-ts-autotag' " Auto close HTML and XML tags too
@@ -205,7 +206,8 @@ cmp.setup {
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
     end,
   },
-
+-- disabled for now - clashes with copilot
+--[[
   mapping = {
     ["<Tab>"] = function(fallback)
       if cmp.visible() then
@@ -226,6 +228,7 @@ cmp.setup {
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
+--]]
 
   sources = {
     { name = "nvim_lsp", keyword_length = 2, max_item_count = 5 },
@@ -450,3 +453,8 @@ nnoremap Y y$
 
 "  <leader>z to zoom current pane
 map <Leader>z :ZoomWin<CR>
+
+" Load local config specified in the home directory
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
