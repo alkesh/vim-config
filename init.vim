@@ -26,6 +26,9 @@ Plug 'windwp/nvim-ts-autotag' " Auto close HTML and XML tags too
 "Copilot
 Plug 'github/copilot.vim'
 
+" File line - open a file at a specific line
+Plug 'bogado/file-line'
+
 " Git
 Plug 'tpope/vim-fugitive'
 
